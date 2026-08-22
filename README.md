@@ -64,5 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Helaina is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Helaina is a New York based biotechnology and nutrition company that uses precision fermentation to
+produce bio-identical human proteins. Its flagship ingredient, effera(R), is described by the company
+as the world's first bio-identical human lactoferrin, designed to match the lactoferrin naturally
+found in mother's milk and in the human body rather than being extracted from cow's milk. Helaina
+sells effera(R) as a business-to-business ingredient to supplement and nutrition formulators, and has
+announced a partnership with Nestle on science-based early-life nutrition.
+
+Helaina is an ingredient manufacturer, not a software vendor. As of 2026-08-22 it publishes no public
+API, developer portal, SDK, or machine-readable API specification. Contract discovery was run against
+its website host and every likely developer subdomain and found nothing: `/openapi.json`,
+`/openapi.yaml`, `/swagger.json`, `/api-docs`, `/graphql`, `/api`, `/wp-json/` and every
+`/.well-known/` path returned 404, and `api.`, `developer.`, `docs.`, `app.` and `shop.myhelaina.com`
+do not resolve in DNS.
+
+What it does publish, and what this profile captures:
+
+- **llms.txt** — a real, provider-authored `llms.txt` at <https://www.myhelaina.com/llms.txt>, saved
+  verbatim to `llms/helaina-llms.txt`. Note that two of the eight pages it advertises
+  (`/resources` and `/blog`) return 404; the live blog index is `/blog/list`.
+- **robots.txt** — explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web,
+  anthropic-ai, PerplexityBot, Google-Extended and Applebot-Extended.
+- **Domain security** — probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC in `security/helaina-domain-security.yml`.
+- **Well-known probe** — the recorded absence, in `well-known/helaina-well-known.yml`.
+
+- <https://www.myhelaina.com/>

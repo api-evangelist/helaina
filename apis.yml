@@ -1,17 +1,34 @@
 aid: helaina
 name: Helaina
-description: 'Helaina is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Helaina is a New York based biotechnology and nutrition company that uses precision fermentation
+  to produce bio-identical human proteins. Its flagship ingredient, effera(R), is described by the
+  company as the world's first bio-identical human lactoferrin, designed to match the lactoferrin
+  naturally found in mother's milk and in the human body rather than being extracted from cow's
+  milk. Helaina sells effera(R) as a business-to-business ingredient to supplement and nutrition
+  formulators across women's health, gut health, longevity, hair and skin, active nutrition, and
+  infant and child nutrition, and has announced a partnership with Nestle to advance science-based
+  early-life nutrition. Helaina is an ingredient manufacturer, not a software vendor: it publishes
+  no public API, developer portal, SDK, or machine-readable API specification. The only
+  machine-readable surface it publishes is an llms.txt at its website root, alongside a robots.txt
+  that explicitly allows AI answer engines.
+image: https://cdn.prod.website-files.com/68b06b5fe51094ae5260962f/68c880229a68ffee8db183a0_OGD.webp
 url: https://raw.githubusercontent.com/api-evangelist/helaina/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: no-public-api-surface
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Biotechnology
+- Nutrition
+- Precision Fermentation
+- Food Ingredients
+- Life Sciences
+- Consumer Health
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,42 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/helaina-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.myhelaina.com/
+- type: Blog
+  url: https://www.myhelaina.com/blog/list
+- type: TermsOfService
+  url: https://www.myhelaina.com/terms-conditions
+- type: ContactUs
+  url: https://www.myhelaina.com/partner-up
+- type: LinkedIn
+  url: https://www.linkedin.com/company/helaina/
+- type: LLMsTxt
+  url: llms/helaina-llms.txt
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Helaina is a precision-fermentation ingredient manufacturer whose product is a physical protein
+    (effera(R) human lactoferrin) sold B2B to supplement formulators, so there is nothing to expose
+    as an API; its entire web presence is an 18-URL Webflow marketing site with no developer, docs,
+    login, or store subdomain resolving in DNS.
+  evidence:
+  - url: https://www.myhelaina.com/openapi.json
+    status: 404
+  - url: https://www.myhelaina.com/api
+    status: 404
+  - url: https://www.myhelaina.com/.well-known/agent-card.json
+    status: 404
+  - url: https://developer.myhelaina.com/
+    status: 0
+  - url: https://www.myhelaina.com/llms.txt
+    status: 200
+  checked: '2026-08-22'

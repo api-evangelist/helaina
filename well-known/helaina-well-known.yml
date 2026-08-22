@@ -1,0 +1,69 @@
+generated: '2026-08-22'
+method: probed
+source: https://www.myhelaina.com/
+note: >-
+  Every /.well-known/ path probed on the Helaina website returned HTTP 404. The host is a Webflow
+  site behind Cloudflare and answers /.well-known/* with a distinct 88-byte "Invalid .well-known
+  request" body, so these are genuine 404s and not a soft-200 catch-all. hit_count is 0 and NO
+  WellKnown or SecurityTxt pointer is emitted in apis.yml: this file records an absence, not a
+  presence. Helaina has no API host, so there is no second host to probe.
+hit_count: 0
+hosts:
+- host: https://www.myhelaina.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    file: null
+x-site-discovery:
+  note: >-
+    Not /.well-known/ documents, recorded here because they are the only machine-readable surface
+    Helaina publishes. llms.txt is saved verbatim to llms/helaina-llms.txt.
+  probes:
+  - url: https://www.myhelaina.com/llms.txt
+    status: 200
+    content_type: text/plain
+    bytes: 2581
+    saved: llms/helaina-llms.txt
+  - url: https://www.myhelaina.com/robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 545
+    note: >-
+      Explicitly Allow: / for GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web,
+      anthropic-ai, PerplexityBot, Google-Extended and Applebot-Extended. Only /401 is disallowed.
+  - url: https://www.myhelaina.com/sitemap.xml
+    status: 200
+    content_type: application/rss+xml
+    bytes: 2063
+    urls: 18
+x-findings:
+- id: llms-txt-advertises-404s
+  detail: >-
+    The provider-published llms.txt links two pages that do not exist. https://www.myhelaina.com/resources
+    returns 404 and https://www.myhelaina.com/blog returns 404 (the live blog index is
+    https://www.myhelaina.com/blog/list). The other six links it advertises resolve 200.
+  checked: '2026-08-22'

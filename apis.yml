@@ -12,6 +12,17 @@ description: >-
   no public API, developer portal, SDK, or machine-readable API specification. The only
   machine-readable surface it publishes is an llms.txt at its website root, alongside a robots.txt
   that explicitly allows AI answer engines.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/68b06b5fe51094ae5260962f/68c880229a68ffee8db183a0_OGD.webp
 url: https://raw.githubusercontent.com/api-evangelist/helaina/refs/heads/main/apis.yml
 x-type: company

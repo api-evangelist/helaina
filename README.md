@@ -64,28 +64,81 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Helaina is a New York based biotechnology and nutrition company that uses precision fermentation to
-produce bio-identical human proteins. Its flagship ingredient, effera(R), is described by the company
-as the world's first bio-identical human lactoferrin, designed to match the lactoferrin naturally
-found in mother's milk and in the human body rather than being extracted from cow's milk. Helaina
-sells effera(R) as a business-to-business ingredient to supplement and nutrition formulators, and has
-announced a partnership with Nestle on science-based early-life nutrition.
+Helaina is a New York based biotechnology and nutrition company that uses precision fermentation to produce bio-identical human proteins. Its flagship ingredient, effera(R), is described by the company as the world's first bio-identical human lactoferrin, designed to match the lactoferrin naturally found in mother's milk and in the human body rather than being extracted from cow's milk. Helaina sells effera(R) as a business-to-business ingredient to supplement and nutrition formulators across women's health, gut health, longevity, hair and skin, active nutrition, and infant and child nutrition, and has announced a partnership with Nestle to advance science-based early-life nutrition. Helaina is an ingredient manufacturer, not a software vendor: it publishes no public API, developer portal, SDK, or machine-readable API specification. The only machine-readable surface it publishes is an llms.txt at its website root, alongside a robots.txt that explicitly allows AI answer engines.
 
-Helaina is an ingredient manufacturer, not a software vendor. As of 2026-08-22 it publishes no public
-API, developer portal, SDK, or machine-readable API specification. Contract discovery was run against
-its website host and every likely developer subdomain and found nothing: `/openapi.json`,
-`/openapi.yaml`, `/swagger.json`, `/api-docs`, `/graphql`, `/api`, `/wp-json/` and every
-`/.well-known/` path returned 404, and `api.`, `developer.`, `docs.`, `app.` and `shop.myhelaina.com`
-do not resolve in DNS.
+**Areas:** Company · Biotechnology · Nutrition · Precision Fermentation · Food Ingredients · Life Sciences · Consumer Health
 
-What it does publish, and what this profile captures:
+## Helaina on APIs.io
 
-- **llms.txt** — a real, provider-authored `llms.txt` at <https://www.myhelaina.com/llms.txt>, saved
-  verbatim to `llms/helaina-llms.txt`. Note that two of the eight pages it advertises
-  (`/resources` and `/blog`) return 404; the live blog index is `/blog/list`.
-- **robots.txt** — explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web,
-  anthropic-ai, PerplexityBot, Google-Extended and Applebot-Extended.
-- **Domain security** — probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC in `security/helaina-domain-security.yml`.
-- **Well-known probe** — the recorded absence, in `well-known/helaina-well-known.yml`.
+Everything profiled for Helaina is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/helaina/](https://apis.io/providers/helaina/)** — or go straight to one of the APIs or properties below.
 
-- <https://www.myhelaina.com/>
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Helaina Domain Security](https://apis.io/security/helaina/helaina-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.myhelaina.com/)
+- [Blog](https://www.myhelaina.com/blog/list)
+- [Terms of service](https://www.myhelaina.com/terms-conditions)
+
+## API Evangelist rating
+
+**Kin Score 7.5** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 10.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 7.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/helaina/](https://apis.io/providers/helaina/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Helaina: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/helaina/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
